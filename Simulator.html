@@ -1,20 +1,55 @@
 <html>
     <head>
-        <title>Evolution Simulator - Hedgehog Studios</title>
-
-       
+    <title>Evolution Simulator - Hedgehog Studios</title>
 
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 
 
     </head>
     <body>
-        <canvas id='canvas' width="1080" height="800"></canvas>
+        <canvas id='canvas' width="1080" height="800" style="border: 1px solid black"></canvas>
+        <span id="options">
+            <input type="button" onclick="Restart()" value="Restart Simulation" /><br />
+            Parameter Curve Ramping<input type="text" id="curveRamping" value=2 /><br />
+            Mutation Rate<input type="text" id="mutationRate" value=5 /><br />
+            <b>Metabolism Coefficients</b><br />
+            Speed <input type="text" id="speedMetabolism" value="1x^2" /><br />
+            Agility <input type="text" id="agilityMetabolism" value="1x^2" /><br />
+            Size <input type="text" id="sizeMetabolism" value="1x^2" /><br />
+            Storage <input type="text" id="storageMetabolism" value="1x^2" /><br />
+            SightAngle <input type="text" id="sightAngleMetabolism" value="1x^2" /><br />
+            SightLength <input type="text" id="sightLengthMetabolism" value="1x^2" /><br />
+            <br />
+            Plant Spawn Rate<input type="text" id="plantSpawnRate" value="100"><input type="checkbox" id="usePlantSpawnRate" checked /><br />
+            Min Plant Number<input type="text" id="plantNumber" value="100"><input type="checkbox" id="usePlantNumber" /><br />
+            <input type="checkbox" id="organicWander" /> organic wander mode<br />
+            <input type="checkbox" id="showTargetLines" />show target lines<br />
+            <input type="button" onclick="ApplyChanges()" value="ApplyChanges" /><br />
+            <br />
+            Speed<input type="text" id="tSpeed" value="100"><br />
+            Agility(turn speed)<input type="text" id="tAgility" value="100"><br />
+            Size<input type="text" id="tSize" value="100"><br />
+            Storage<input type="text" id="tStorage" value="100"><br />
+            Sight Angle<input type="text" id="tSightAngle" value="100"><br />
+            Sight Length<input type="text" id="tSightLength" value="100"><br />
+            Lifetime<input type="text" id="tLifetime" value="100"><br />
+            <input type="button" onclick="CreateThing()" value="Create Thing" /><br />
+            <div id="averages">Averages</div>
+
+        </span>
         <!--Scripts-->
 
         <script src="Engine.js"></script>
         <script src="Simulator.js"></script>
     </body>
+
 </html>
+<style>
+    #options{
+        position:absolute;
+    }
+</style>
