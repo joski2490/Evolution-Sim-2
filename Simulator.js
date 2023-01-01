@@ -153,7 +153,7 @@ class Thing extends Object {
         if (plant != null) {
             if (DistanceVector(new Vector2(this.x, this.y), new Vector2(plant.x, plant.y)) < Curve(this.size) / 3 + plant.size / 3) {
                 this.energy += plant.energy;
-                if (this.energy > this.storage) {
+                if (this.energy > this.storage/2) {
                     this.energy /= 2;
                     this.Reproduce();
                 }
