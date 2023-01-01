@@ -91,7 +91,7 @@ function CreateThing() {
 class Thing extends Object {
     constructor(speed, agility, size, storage, sightAngle, sightLength, lifeTime) {
         super();
-        this.energy = storage / 2;
+        this.energy = storage * 0.75;
 
         this.speed = speed;
         this.agility = agility;
